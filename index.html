@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Preview</title>
+<script src="./loadUp.js" charset="utf-8"></script>
 </head>
 <body>
     <style type="text/css" media="screen">
@@ -14,13 +15,8 @@
     </style>
     <script src="./mermaid.min.js" charset="utf-8"></script>
     <script charset="utf-8">mermaid.initialize({startOnLoad:true});</script>
-    <div class='mermaid'>
-      graph TD
-          A[Christmas] -->|Get money| B(Go shopping)
-          B --> C{Let me think}
-          C -->|One| D[Laptop]
-          C -->|Two| E[iPhone]
-          C -->|Three| F[fa:fa-car Car]
-    </div>
+    <div id="previewBox" class="mermaid">
+
+    </div> 
 </body>
 </html>
