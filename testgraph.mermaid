@@ -1,18 +1,12 @@
-```mermaid
-    StateDiagram-v2
-        [*] --> Active
-
-    state Active {
-        [*] --> NumLockOff
-        NumLockOff --> NumLockOn : EvNumLockPressed
-        NumLockOn --> NumLockOff : EvNumLockPressed
-        --
-        [*] --> CapsLockOff
-        CapsLockOff --> CapsLockOn : EvCapsLockPressed
-        CapsLockOn --> CapsLockOff : EvCapsLockPressed
-        --
-        [*] --> ScrollLockOff
-        ScrollLockOff --> ScrollLockOn : EvCapsLockPressed
-        ScrollLockOn --> ScrollLockOff : EvCapsLockPressed
-    }
-```
+stateDiagram-v2
+    [*] --> Still
+    Still --> [*]
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
+    Crash --> Hello_World
+    Hello_World --> [*]
+    Hey_There --> Hello_World
+    Whats_Up --> Hey_There    
+    Stupid --> DidItWork?

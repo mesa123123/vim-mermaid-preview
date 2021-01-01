@@ -1,0 +1,24 @@
+{
+  "name": "vim-mermaid-preview",
+  "version": "1.0.0",
+  "description": "A previewer for mermaid in vim",
+  "main": "loadUp.js",
+  "scripts": {
+    "test": "t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tbc"
+  },
+  "author": "Peter Bowman",
+  "license": "ISC",
+  "dependencies": {
+    "doasync": "^2.0.1",
+    "express": "^4.17.1",
+    "mermaid": "^8.8.4",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
