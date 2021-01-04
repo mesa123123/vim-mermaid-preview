@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Preview</title>
     <script src="./mermaid/mermaid.min.js" charset="utf-8"></script>
+    <script src="./socketio/socket.io.js"></script>
     <script charset="utf-8">
+        const socket = io();
         mermaid.initialize({startOnLoad: false});
-        fetch('/diagram').then(response => response.json()).then(diagramContent => { document.getElementsByClassName("mermaid")[0].innerHTML = diagramContent.diagram; mermaid.init()})
-
+        function DiagramLoad(diagramContent, reload) {
+            diagramRenderSpace = document.getElementsByClassName("mermaid")[0];
+            if (reload) {
+                diagramRenderSpace.removeAttribute('data-processed');
+            }
+            diagramRenderSpace.innerHTML = diagramContent.diagram;
+            mermaid.init();
+        }
+        socket.on('diagram', (diagramContent) => {
+            DiagramLoad(diagramContent, false);
+        });
+        socket.on('diagramChange', (diagramContent) => {
+            DiagramLoad(diagramContent, true);
+        });
     </script>
 </head>
 
-<body> 
+<body>
     <style type="text/css" media="screen">
         html,
         body {
@@ -23,7 +37,7 @@
     </style>
     <div class="mermaid">
     </div>
-    </body>
+</body>
 </body>
 
 </html>

@@ -1,12 +1,15 @@
-stateDiagram-v2
-    [*] --> Still
-    Still --> [*]
-    Still --> Moving
-    Moving --> Still
-    Moving --> Crash
-    Crash --> [*]
-    Crash --> Hello_World
-    Hello_World --> [*]
-    Hey_There --> Hello_World
-    Whats_Up --> Hey_There    
-    Stupid --> DidItWork?
+gitGraph:
+options
+{
+    "nodeSpacing": 150,
+    "nodeRadius": 10
+}
+end
+commit
+branch newbranch
+checkout newbranch
+commit
+commit
+checkout master
+commit
+merge newbranch
